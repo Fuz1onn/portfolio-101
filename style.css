@@ -1,0 +1,79 @@
+.section {
+    padding: 1rem;
+}
+
+.btn-outline-dark {
+  transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  background-color: #888;
+  color: #fff;
+  border-color: #888;
+}
+
+.btn-outline-dark:active,
+.btn-outline-dark.active {
+  background-color: #333 !important;
+  color: #fff !important;
+  border-color: #333 !important;
+}
+
+#contact a {
+  color: #000000;
+}
+
+#contact a:hover {
+  color: #ebeaeacb;
+  text-decoration: none;
+}
+
+[data-bs-theme="light"] .bg-custom-light {
+  background-color: #f8f9fa !important;
+}
+
+[data-bs-theme="light"] .btn-outline-custom {
+  transition: all 0.3s ease;
+  color: #212529 !important;
+  border-color: #212529 !important;
+}
+
+[data-bs-theme="light"] .btn-outline-custom:hover {
+  background-color: #212529 !important;
+  color: #ffffff !important;
+  border-color: #212529 !important;
+}
+
+[data-bs-theme="dark"] .btn-outline-custom {
+  transition: all 0.3s ease;
+  color: #f8f9fa !important;
+  border-color: #f8f9fa !important;
+}
+
+[data-bs-theme="dark"] .btn-outline-custom:hover {
+  background-color: #f8f9fa !important;
+  color: #000 !important;
+  border-color: #f8f9fa !important;
+}
+
+[data-bs-theme="light"] .btn-primary-custom {
+  transition: all 0.3s ease;
+  background-color: #212529 !important;
+  color: #ffffff !important;
+}
+
+[data-bs-theme="light"] .btn-primary-custom:hover {
+  background-color: #424649 !important;
+  color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .btn-primary-custom {
+  transition: all 0.3s ease;
+  background-color: #f8f9fa !important;
+  color: #000 !important;
+}
+
+[data-bs-theme="dark"] .btn-primary-custom:hover {
+  background-color: #d3d4d5 !important;
+  color: #000 !important;
+}
