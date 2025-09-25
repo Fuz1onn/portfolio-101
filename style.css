@@ -19,13 +19,12 @@
   border-color: #333 !important;
 }
 
-#contact a {
-  color: #000000;
+[data-bs-theme="light"] #contact li a:hover {
+  color: #0000009c !important;
 }
 
-#contact a:hover {
-  color: #ebeaeacb;
-  text-decoration: none;
+[data-bs-theme="dark"] #contact li a:hover {
+  color: #ebeaea8f !important;
 }
 
 [data-bs-theme="light"] .bg-custom-light {
