@@ -2,6 +2,7 @@
     padding: 1rem;
 }
 
+<<<<<<< HEAD
 #gallery img {
   width: 100%;              /* make image span the card width */
   height: 350px;            /* fixed height, adjust as needed */
@@ -10,6 +11,8 @@
 }
 
 
+=======
+>>>>>>> dca64e94d67ffbc8fab9acd81f94aa21ea40cf5d
 .btn-outline-dark {
   transition: all 0.3s ease;
 }
