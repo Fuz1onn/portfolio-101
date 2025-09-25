@@ -33,3 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+const backToTopButton = document.getElementById("back-to-top-btn");
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  }
+
+  backToTopButton.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  const now = new Date();
+  document.getElementById("time").value = now.toLocaleString();
