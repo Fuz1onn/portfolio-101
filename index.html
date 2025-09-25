@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+          publicKey: "CONFQaQVnDIrDQQip",
+        });
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            // these IDs from the previous steps
+            emailjs.sendForm("contact_service", "contact_form", this).then(
+              () => {
+                console.log("SUCCESS!");
+                Swal.fire({
+                  icon: "success",
+                  title: "Message sent successfully!",
+                  text: "Thank you for reaching out. I'll get back to you soon.",
+                  showConfirmButton: true,
+                });
+                this.reset();
+              },
+              (error) => {
+                console.log("FAILED...", error);
+                Swal.fire({
+                  icon: "error",
+                  title: "Message failed to send.",
+                  text: "Please try again later.",
+                  showConfirmButton: true,
+                });
+              }
+            );
+          });
+      };
+    </script>
+    <title>Khalil Acebuche - Portfolio</title>
+  </head>
+  <body>
+    <div
+      class="navbar navbar-expand-lg bg-body border-bottom rounded-bottom-4 shadow-sm px-1 px-md-5 fixed-top"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#home">&lt;Khalil /&gt;</a>
+        <button id="themeToggle" class="btn border-0 me-auto">
+          <i id="themeIcon" class="bi bi-moon"></i>
+        </button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <section
+      id="home"
+      class="d-flex align-items-center justify-content-center bg-custom-light text-center text-body py-5"
+      style="min-height: 80vh"
+    >
+      <div class="text-center">
+        <h1 class="display-4 fw-bold mb-3">
+          Hi, I'm <span class="text-secondary">Khalil Scythe Acebuche</span>
+        </h1>
+        <p class="lead text-body mb-4 px-5">
+          I'm a Full-Stack Web Developer passionate about creating impactful and
+          user-friendly web applications.
+        </p>
+        <a href="#projects" class="btn btn-outline-custom btn-lg"
+          >View Projects</a
+        >
+        <a href="#contact" class="btn btn-primary-custom btn-lg text-light"
+          >Get in Touch</a
+        >
+      </div>
+    </section>
+
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row align-items-center g-4 px-4 px-lg-0">
+          <div class="col-12 col-md-8">
+            <h2 class="fw-bold mb-3">About Me</h2>
+            <p class="text-body lead">
+              Hello! I'm
+              <strong class="text-secondary">Khalil Scythe Acebuche</strong>, a
+              graduate of Information Technology from Bulacan State University,
+              specializing in Web and Mobile Application Development. I'm driven
+              by a passion for creating innovative and impactful software
+              solutions.
+            </p>
+            <p class="text-body lead">
+              As a highly motivated and creative individual with a strong work
+              ethic, I thrive on learning new technologies and tackling
+              challenging projects. I'm also a collaborative team player, eager
+              to contribute to shared goals.
+            </p>
+          </div>
+
+          <div class="col-12 col-md-4 text-center">
+            <img
+              src="images/Profile1.jpg"
+              alt="Khalil Scythe Acebuche profile photo"
+              class="rounded-circle img-fluid shadow-sm"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="py-5 bg-custom-light">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="fw-bold">Gallery</h2>
+        </div>
+        <div class="row g-4 p-5">
+          <div class="col-12 col-sm-6 col-lg-4 d-flex">
+            <div class="card shadow-sm flex-fill p-2">
+              <img
+                src="images/boracay_2.jpeg"
+                alt="Gallery Image 1"
+                class="img-fluid rounded shadow-sm"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 d-flex">
+            <div class="card shadow-sm flex-fill p-2">
+              <img
+                src="images/boracay_1.jpeg"
+                alt="Gallery Image 1"
+                class="img-fluid rounded shadow-sm"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 d-flex">
+            <div class="card shadow-sm flex-fill p-2">
+              <img
+                src="images/capstone_1.jpeg"
+                alt="Gallery Image 1"
+                class="img-fluid rounded shadow-sm"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="collapse" id="moreGallery">
+          <div class="row g-4 ps-5 pe-5 pb-5">
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+              <div class="card shadow-sm flex-fill p-2">
+                <img
+                  src="images/Acebuche_KhalilScytheM.0758.jpg"
+                  alt="Gallery Image 1"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+              <div class="card shadow-sm flex-fill p-2">
+                <img
+                  src="images/PASCULADO, JOHN4983.jpg"
+                  alt="Gallery Image 1"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+              <div class="card shadow-sm flex-fill p-2">
+                <img
+                  src="images/PASCULADO, JOHN4992.jpg"
+                  alt="Gallery Image 1"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+              <div class="card shadow-sm flex-fill p-2">
+                <img
+                  src="images/cert_1.png"
+                  alt="Gallery Image 1"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex">
+              <div class="card shadow-sm flex-fill p-2">
+                <img
+                  src="images/cert_2.png"
+                  alt="Gallery Image 1"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button
+            class="btn btn-outline-custom"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#moreGallery"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+            id="toggleGalleryBtn"
+          >
+            See More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">Projects</h2>
+        </div>
+
+        <div class="row g-4 mb-3">
+          <div class="col-12 col-sm-6 col-lg-4 d-flex">
+            <div class="card shadow-sm flex-fill p-2">
+              <img
+                src="images/project1.png"
+                class="card-img-top"
+                alt="Project 1"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">
+                  Online Library Catalog Viewing System With Scheduling
+                </h5>
+                <p class="card-text text-body-secondary flex-grow-1">
+                  Serves as the official online catalog of the library,
+                  showcasing digitized books and providing detailed information
+                  about the library. It's main feature is a seat reservation,
+                  allowing users to book available spots in the library with
+                  ease.
+                </p>
+                <div class="d-flex gap-2 mt-auto">
+                  <a
+                    href="https://github.com/Fuz1onn/PHACTO"
+                    target="_blank"
+                    class="btn btn-outline-custom"
+                  >
+                    <i class="bi bi-github me-1"></i>
+                    GitHub
+                  </a>
+                  <a
+                    href="https://fuz1onn.github.io/PHACTO1"
+                    target="_blank"
+                    class="btn btn-outline-custom"
+                  >
+                    <i class="bi bi-arrow-up-right me-1"></i>
+                    Live
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex">
+            <div class="card shadow-sm flex-fill p-2">
+              <img
+                src="images/project2.png"
+                class="card-img-top"
+                alt="Project 2"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Home Buys Plus</h5>
+                <p class="card-text text-body-secondary flex-grow-1">
+                  Built with HTML and CSS from a mockup, this website showcases
+                  the implementation of a provided design. It demonstrates the
+                  ability to create a visually accurate web presence.
+                </p>
+                <div class="d-flex gap-2 mt-auto">
+                  <a
+                    href="https://github.com/Fuz1onn/HomeBuysPlus"
+                    target="_blank"
+                    class="btn btn-outline-custom"
+                  >
+                    <i class="bi bi-github me-1"></i>
+                    GitHub
+                  </a>
+                  <a
+                    href="https://fuz1onn.github.io/HomeBuysPlus/"
+                    target="_blank"
+                    class="btn btn-outline-custom"
+                  >
+                    <i class="bi bi-arrow-up-right me-1"></i>
+                    Live
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex">
+            <div class="card shadow-sm flex-fill p-2">
+              <img
+                src="images/project3.png"
+                class="card-img-top"
+                alt="Project 3"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">
+                  Web Employment Searching and Employing System
+                </h5>
+                <p class="card-text text-body-secondary flex-grow-1">
+                  This basic web application (PHP, HTML, CSS, JS, MySQL)
+                  functions as a job search platform. It enables users to browse
+                  available employment opportunities online.
+                </p>
+                <div class="d-flex gap-2 mt-auto">
+                  <a
+                    href="https://github.com/Fuz1onn/gottawork"
+                    target="_blank"
+                    class="btn btn-outline-custom"
+                  >
+                    <i class="bi bi-github me-1"></i>
+                    GitHub
+                  </a>
+                  <a
+                    href="https://fuz1onn.github.io/gottawork/"
+                    target="_blank"
+                    class="btn btn-outline-custom"
+                  >
+                    <i class="bi bi-arrow-up-right me-1"></i>
+                    Live
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-custom-light">
+      <div class="container">
+        <div class="row g-4 align-items-start px-4 px-lg-0">
+          <div class="col-12 col-md-6">
+            <h2 class="fw-bold mb-3">Contact Me</h2>
+            <p class="text-body mb-4">
+              Feel free to reach out to me for any questions or opportunities.
+            </p>
+            <ul class="list-unstyled">
+              <li class="mb-3 d-flex align-items-center">
+                <i class="bi bi-envelope-fill me-2"></i>
+                <a
+                  href="mailto:khalilacebuche17gmail.com"
+                  class="text-decoration-none text-body"
+                >
+                  khalilacebuche17@gmail.com
+                </a>
+              </li>
+              <li class="mb-3 d-flex align-items-center">
+                <i class="bi bi-telephone-fill me-2"></i>
+                <a
+                  href="tel:+639123456789"
+                  class="text-decoration-none text-body"
+                >
+                  +63 956 093 5175
+                </a>
+              </li>
+              <li class="mb-3 d-flex align-items-center">
+                <i class="bi bi-linkedin me-2"></i>
+                <a
+                  href="https://linkedin.com/in/khalil-scythe-acebuche-505045257"
+                  target="_blank"
+                  class="text-decoration-none text-body"
+                >
+                  LinkedIn Profile
+                </a>
+              </li>
+              <li class="d-flex align-items-center">
+                <i class="bi bi-github me-2"></i>
+                <a
+                  href="https://github.com/Fuz1onn"
+                  target="_blank"
+                  class="text-decoration-none text-body"
+                >
+                  GitHub Profile</a
+                >
+              </li>
+            </ul>
+            <a
+              href="files/(Resume) Acebuche, Khalil Scythe M..pdf"
+              download
+              class="btn btn-outline-custom"
+            >
+              Download Resume
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <form id="contact-form">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="user_name"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="user_email"
+                  class="form-control"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  id="message"
+                  name="user_message"
+                  class="form-control"
+                  rows="5"
+                  placeholder="Write your message..."
+                  required
+                ></textarea>
+              </div>
+              <input type="hidden" name="time" id="time" />
+              <button type="submit" class="btn btn-outline-custom mb-3">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-body py-3">
+      <div class="container text-center">
+        <p class="mb-2">&copy; 2025 All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button id="back-to-top-btn">
+      <div class="back-to-top-icon">
+        <i class="bi bi-arrow-up"></i>
+      </div>
+    </button>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
